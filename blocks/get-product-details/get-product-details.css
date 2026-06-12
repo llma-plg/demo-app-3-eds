@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .get-product-details {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .get-product-details .product-detail-card {
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+main .get-product-details .product-image {
+  position: relative;
+  width: 260px;
+  flex-shrink: 0;
+  height: 280px;
+}
+
+main .get-product-details .product-image img,
+main .get-product-details .product-image > div {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+main .get-product-details .cta-button {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0053c2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+main .get-product-details .cta-button:hover {
+  opacity: 0.9;
+}
+
+main .get-product-details .product-content {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+main .get-product-details .product-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: inherit;
+}
+
+main .get-product-details .category-chip {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+main .get-product-details .product-description {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.78;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: inherit;
+}
+
+main .get-product-details .product-price {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: auto;
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  main .get-product-details {
+    background: #111;
+  }
+}
+
+body.dark main .get-product-details {
+  background: #111;
+}
