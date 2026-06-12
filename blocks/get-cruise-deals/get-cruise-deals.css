@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .get-cruise-deals {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 8px;
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+}
+
+main .get-cruise-deals .carousel-wrapper {
+  position: relative;
+}
+
+main .get-cruise-deals .deals-carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 4px;
+}
+
+main .get-cruise-deals .deals-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+main .get-cruise-deals .deal-card {
+  flex: 0 0 220px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  position: relative;
+}
+
+main .get-cruise-deals .deal-card .image-container {
+  flex: 6;
+  position: relative;
+  overflow: hidden;
+}
+
+main .get-cruise-deals .deal-card .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+main .get-cruise-deals .deal-card .discount-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #e34850;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+main .get-cruise-deals .deal-card .cta-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #b6254f;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.15s;
+}
+
+main .get-cruise-deals .deal-card .cta-btn:hover {
+  opacity: 0.9;
+}
+
+main .get-cruise-deals .deal-card .deal-info {
+  flex: 4;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+main .get-cruise-deals .deal-card .deal-info .deal-name {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+main .get-cruise-deals .deal-card .deal-info .deal-description {
+  font-size: 11px;
+  margin: 0;
+  opacity: 0.78;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.3;
+}
+
+main .get-cruise-deals .deal-card .deal-info .price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+main .get-cruise-deals .deal-card .deal-info .original-price {
+  font-size: 11px;
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+main .get-cruise-deals .deal-card .deal-info .sale-price {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+main .get-cruise-deals .deal-card .deal-info .category-badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.12);
+  display: inline-block;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+main .get-cruise-deals .nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+  color: #333;
+  transition: opacity 0.15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+main .get-cruise-deals .nav-arrow:hover {
+  opacity: 0.85;
+}
+
+main .get-cruise-deals .nav-arrow:focus-visible {
+  outline: 2px solid #b6254f;
+  outline-offset: 2px;
+}
+
+main .get-cruise-deals .nav-arrow.hidden {
+  display: none;
+}
+
+main .get-cruise-deals .nav-arrow.left {
+  left: 4px;
+}
+
+main .get-cruise-deals .nav-arrow.right {
+  right: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  main .get-cruise-deals {
+    background: transparent;
+  }
+  
+  main .get-cruise-deals .nav-arrow {
+    background: rgba(40,40,40,0.9);
+    color: #fff;
+  }
+}
+
+body.dark main .get-cruise-deals {
+  background: transparent;
+}
+
+body.dark main .get-cruise-deals .nav-arrow {
+  background: rgba(40,40,40,0.9);
+  color: #fff;
+}
