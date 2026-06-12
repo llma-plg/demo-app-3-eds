@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .browse-destinations {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 8px;
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+}
+
+main .browse-destinations .carousel-wrapper {
+  position: relative;
+}
+
+main .browse-destinations .carousel-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 4px 4px;
+}
+
+main .browse-destinations .carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+main .browse-destinations .destination-card {
+  flex: 0 0 220px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+main .browse-destinations .destination-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+main .browse-destinations .card-image-container {
+  position: relative;
+  flex: 6;
+  width: 100%;
+  background: #e5e5e5;
+}
+
+main .browse-destinations .card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+main .browse-destinations .card-cta {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 20px;
+  background: #b6254f;
+  color: #fff;
+  border: none;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+main .browse-destinations .card-cta:hover {
+  opacity: 0.9;
+}
+
+main .browse-destinations .card-cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+main .browse-destinations .card-content {
+  flex: 4;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+main .browse-destinations .card-name {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+main .browse-destinations .card-description {
+  font-size: 11px;
+  line-height: 1.3;
+  margin: 0;
+  opacity: 0.78;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+main .browse-destinations .card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+main .browse-destinations .card-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  background: #b6254f;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+main .browse-destinations .carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.15s, transform 0.15s;
+  z-index: 10;
+}
+
+main .browse-destinations .carousel-nav:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.05);
+}
+
+main .browse-destinations .carousel-nav:focus-visible {
+  outline: 2px solid #b6254f;
+  outline-offset: 2px;
+}
+
+main .browse-destinations .carousel-nav.hidden {
+  display: none;
+}
+
+main .browse-destinations .carousel-nav.left {
+  left: -8px;
+}
+
+main .browse-destinations .carousel-nav.right {
+  right: -8px;
+}
+
+main .browse-destinations .fade-gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60px;
+  pointer-events: none;
+  border-radius: 0 10px 10px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  main .browse-destinations {
+    background: transparent;
+  }
+  main .browse-destinations .destination-card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  main .browse-destinations .destination-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+  main .browse-destinations .carousel-nav {
+    background: rgba(50,50,50,0.95);
+    color: #fff;
+    border-color: rgba(255,255,255,0.1);
+  }
+  main .browse-destinations .carousel-nav:hover {
+    background: #333;
+  }
+}
+
+body.dark main .browse-destinations {
+  background: transparent;
+}
+body.dark main .browse-destinations .destination-card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+body.dark main .browse-destinations .destination-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+body.dark main .browse-destinations .carousel-nav {
+  background: rgba(50,50,50,0.95);
+  color: #fff;
+  border-color: rgba(255,255,255,0.1);
+}
+body.dark main .browse-destinations .carousel-nav:hover {
+  background: #333;
+}
